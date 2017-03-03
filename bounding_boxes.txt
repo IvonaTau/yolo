@@ -1,0 +1,4 @@
+Dimensions;1000;1000
+Object;clock;62%;BB;823;994;325;567;
+Object;microwave;36%;BB;529;609;441;536;
+Object;chair;59%;BB;49;226;611;832;
