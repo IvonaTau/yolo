@@ -20,7 +20,7 @@ CC=gcc
 NVCC=nvcc 
 OPTS=-Ofast
 LDFLAGS= -lm -pthread 
-COMMON=-shared
+COMMON=-shared -fPIC
 CFLAGS=-Wall -Wfatal-errors 
 
 ifeq ($(DEBUG), 1) 
