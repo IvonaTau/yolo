@@ -61,7 +61,7 @@ all: obj backup results $(EXEC)
 
 $(EXEC): $(OBJS)
 	# $(CC) $(COMMON) $(CFLAGS) $^ -o $@ $(LDFLAGS)
-		$(CC) $(COMMON) $(CFLAGS) $^ -o libdarknet2.so $(LDFLAGS)
+		$(CC) $(COMMON) $(CFLAGS) $^ -o libdarknetlnx.so $(LDFLAGS)
 
 $(OBJDIR)%.o: %.c $(DEPS)
 	$(CC) $(COMMON) $(CFLAGS) -c $< -o $@
