@@ -148,27 +148,25 @@ void forward_network(network net, network_state state)
     clock_t layer_start;
     clock_t cpu_start;
     clock_t forward_start;
-    printf("Starting forward_network\n");
     time = clock();
     state.workspace = net.workspace;
     int i;
     for(i = 0; i < net.n; ++i){
-        printf("Layer number %i\n", i);
+//         printf("Layer number %i\n", i);
         layer_start = clock();
         state.index = i;
         layer l = net.layers[i];
         if(l.delta){
             cpu_start = clock();
             scal_cpu(l.outputs * l.batch, 0, l.delta, 1);
-            printf("Scal_cpu took %f seconds\n", sec(clock()-cpu_start));
+//             printf("Scal_cpu took %f seconds\n", sec(clock()-cpu_start));
         }
         forward_start = clock();
         l.forward(l, state);
         state.input = l.output;
-        printf("Layer forward took %f seconds\n", sec(clock()-forward_start));
-        printf("Layer %i took %f seconds\n", i, sec(clock()-layer_start));
+//         printf("Layer forward took %f seconds\n", sec(clock()-forward_start));
+//         printf("Layer %i took %f seconds\n", i, sec(clock()-layer_start));
     }
-    printf("Finished forward_network\n");
     printf("Forward network took %f\n", sec(clock()-time));
 }
 
