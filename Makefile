@@ -1,6 +1,6 @@
 GPU=0
 CUDNN=0
-OPENCV=1
+OPENCV=0
 DEBUG=0
 SHAREDLIB=1
 
@@ -15,7 +15,7 @@ ARCH=  -gencode arch=compute_52,code=compute_52
 
 VPATH=./src/
 EXEC=darknet
-LIBSO=libdarknet.so
+LIBSO=libdarknetlnx.so
 OBJDIR=./obj/
 
 CC=gcc
