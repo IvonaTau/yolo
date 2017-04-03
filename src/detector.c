@@ -210,7 +210,7 @@ void print_detector_detections(FILE **fps, char *id, box *boxes, float **probs, 
     }
 }
 
-void print_imagenet_detections(FILE *fp, char *id, box *boxes, float **probs, int total, int classes, int w, int h)
+void print_imagenet_detections(FILE *fp, int id, box *boxes, float **probs, int total, int classes, int w, int h)
 {
     int i, j;
     for(i = 0; i < total; ++i){
