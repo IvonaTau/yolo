@@ -491,6 +491,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
         else{
             save_image(im, "predictions");
             show_image(im, "predictions");
+        }
 
         free_image(im);
         free_image(sized);
