@@ -456,6 +456,7 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
     clock_t time;
     char buff[256];
     char *input = buff;
+    char *image_name = buff;
     int j;
     float nms=.4;
     while(1){
@@ -486,6 +487,9 @@ void test_detector(char *datacfg, char *cfgfile, char *weightfile, char *filenam
         draw_detections(im, l.w*l.h*l.n, thresh, boxes, probs, names, alphabet, l.classes);
         printf("Filename %s.\n", filename);
         show_image(im, "predictions");
+        strcpy(image_name, "predictions_")
+        strcat(image_name, filename);
+        save_image(im, image_name);
 
         free_image(im);
         free_image(sized);
