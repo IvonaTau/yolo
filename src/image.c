@@ -185,13 +185,10 @@ void draw_detections(image im, int num, float thresh, box *boxes, float **probs,
     fp = fopen ("bounding_boxes.txt", "w+");
 
     fprintf(fp, "Dimensions;%i;%i\n", im.w, im.h);
-    fprintf(fp, "Thres;%.0f%%;\n", thresh*100); //remove this
-    fprintf(fp, "Num;%i;\n", num); //remove this
 
     for(i = 0; i < num; ++i){
         int class = max_index(probs[i], classes);
         float prob = probs[i][class];
-        fprintf(fp, "Prob;%.0f%%;\n", prob*100); //remove this
         if(prob > thresh){
 
             int width = im.h * .012;
